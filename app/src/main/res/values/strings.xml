@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Number Game App</string>
+    <string name="user_name_key">USER_NAME_KEY</string>
 </resources>

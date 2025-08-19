@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.Random;
+import java.util.ResourceBundle;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
         btnNumber1 = findViewById(R.id.btnNumber1);
         btnNumber2 = findViewById(R.id.btnNumber2);
         tvScore = findViewById(R.id.tvScore);
-
+        ResourceBundle getResources = null;
+        String userName = getIntent().getStringExtra(getResources().getString(R.string.user_name_key));
+        TextView welcomeText = findViewById(R.id.tvWelcome);
+        welcomeText.setText("Welcome to the number game, " + userName +"!");
         random = new Random();
 
         // Start with random numbers

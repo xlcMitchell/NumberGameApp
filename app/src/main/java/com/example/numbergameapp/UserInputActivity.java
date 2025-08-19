@@ -27,7 +27,7 @@ public class UserInputActivity extends AppCompatActivity {
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // startGame(userName);
+                startGame(userName);
             }
         });
 
@@ -41,7 +41,10 @@ public class UserInputActivity extends AppCompatActivity {
                     "Enter you name to start the Game!", Toast.LENGTH_LONG).show();
         } else {
             // Start the MainActivity to play game
+
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            //value is transferred to the main activity via the key we made in the string files..
+            intent.putExtra(getResources().getString(R.string.user_name_key), userName);
             startActivity(intent);
         }
     }
